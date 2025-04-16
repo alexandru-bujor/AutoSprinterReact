@@ -1,0 +1,66 @@
+/* About Us Section */
+.about-us {
+    background-color: #f9f9f9;
+  }
+  
+  .about-us h2 {
+    font-size: 2.5rem;
+    color: #007bff;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+  
+  .about-us .lead {
+    font-size: 1.2rem;
+    color: #6c757d;
+  }
+  
+  .about-us h3 {
+    font-size: 1.8rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+  }
+  
+  .about-us ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .about-us ul li {
+    font-size: 1.1rem;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+  
+  .about-us ul li:hover {
+    background-color: #f1f1f1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-us .img-fluid {
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-us .btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+  }
+  
+  .about-us .btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Icon Styles */
+  .about-us .text-primary {
+    color: #007bff;
+  }
+  
+  .about-us .me-2 {
+    margin-right: 0.5rem;
+  }
+  
