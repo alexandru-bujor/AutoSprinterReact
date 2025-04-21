@@ -20,6 +20,8 @@ export default function ContactForm({ selectedCar }) {
     };
 
     const sendToTelegram = async () => {
+        const botToken = ":"; // Replace with your bot token
+        const chatId = ""; // Replace with your chat ID
 
         const { name, phone, message } = formData;
 
