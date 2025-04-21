@@ -1,116 +1,93 @@
-/* newsletter.css */
-
-.newsletter {
-    background-size: cover;
-    background-position: center;
-    padding: 4rem 1rem;
-    color: #fff;
-    position: relative;
-    text-align: center;
-    overflow: hidden;
-}
-
-.newsletter::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.55);
-    z-index: 0;
-}
-
-.newsletter .container {
-    position: relative;
-    z-index: 1;
-    max-width: 720px;
+/* General styles for the contact form container */
+.contact-form-container {
+    max-width: 600px;
     margin: 0 auto;
     padding: 2rem;
-    backdrop-filter: blur(6px);
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 1.25rem;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    margin-top: 2rem;
+    transition: all 0.3s ease;
 }
 
-.text-xletter h2 {
+.form-title {
     font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: #fff;
-}
-
-.text-xletter p {
-    font-size: 1.1rem;
-    color: #f0f0f0;
-    margin-bottom: 2rem;
-}
-
-.xform {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-}
-
-.form-group {
-    width: 100%;
-}
-
-.form-control {
-    width: 100%;
-    padding: 0.9rem 1.2rem;
-    border-radius: 0.75rem;
-    border: none;
-    background: rgba(255, 255, 255, 0.9);
-    color: #1a202c;
-    font-size: 1rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.2s;
-}
-
-.form-control::placeholder {
-    color: #718096;
-}
-
-.form-control:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.4);
-}
-
-/* Submit Button */
-.xnewsletter_btn {
-    background: linear-gradient(135deg, #2563eb, #4f46e5);
-    color: #fff;
     font-weight: 600;
-    font-size: 1.1rem;
-    padding: 0.9rem;
-    border: none;
-    border-radius: 0.75rem;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.car-details-card {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.car-details-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.car-details-list {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: #666;
+}
+
+.input-field {
     width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
 }
 
-.xnewsletter_btn:hover {
-    background: linear-gradient(135deg, #1d4ed8, #4338ca);
-    transform: translateY(-2px);
+.input-field:focus {
+    border-color: #4F8EF7;
+    outline: none;
+    box-shadow: 0 0 5px rgba(79, 142, 247, 0.5);
 }
 
-.xnewsletter_btn:active {
-    transform: scale(0.98);
+.textarea {
+    resize: none;
+    height: 120px;
 }
 
-/* Responsive */
-@media (min-width: 600px) {
-    .xform {
-        grid-template-columns: repeat(3, 1fr);
-    }
+.submit-btn {
+    width: 100%;
+    padding: 1.2rem;
+    background: linear-gradient(90deg, #4F8EF7, #3576E5);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
 
-    .xform .form-group:last-child {
-        grid-column: span 3;
-    }
+.submit-btn:hover {
+    background: linear-gradient(90deg, #3576E5, #4F8EF7);
+}
 
-    .xnewsletter_btn {
-        max-width: 220px;
-        margin: 0 auto;
-        display: block;
-    }
+.submit-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.submit-btn.loading {
+    background-color: #3576E5;
+    cursor: not-allowed;
 }
