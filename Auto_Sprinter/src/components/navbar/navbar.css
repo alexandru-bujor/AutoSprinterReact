@@ -2,27 +2,40 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0.5rem 1rem;
 }
 
 .navbar-img {
-    height: 50px;
+    height: 45px;
+    transition: transform 0.3s ease;
+}
+
+.navbar-img:hover {
+    transform: scale(1.05);
 }
 
 .navbar-img2 {
     display: none;
-    height: 40px;
+    height: 35px;
 }
 
 .phone-icon {
-    font-size: 1.4rem;
-    color: #000;
-    margin-right: 10px;
+    font-size: 1.2rem;
+    color: #666;
+    margin-right: 8px;
     display: none;
 }
 
 .nav-link {
     display: flex;
     align-items: center;
+    color: #555 !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #e52c2c !important;
 }
 
 .nav-link span {
@@ -30,22 +43,25 @@
 }
 
 .dropdown-menu {
-    padding: 0;
-    margin-top: 0;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
     background-color: white;
-    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-radius: 8px;
 }
 
 .dropdown-item {
-    padding: 10px 15px;
-    color: #000;
+    padding: 8px 16px;
+    color: #555;
     text-decoration: none;
     display: block;
-    border-bottom: 1px solid #eee;
+    transition: all 0.3s ease;
 }
 
 .dropdown-item:hover {
     background-color: #f8f9fa;
+    color: #e52c2c;
 }
 
 /* Mobile View */
@@ -56,6 +72,7 @@
 
     .navbar-img2 {
         display: inline;
+        width: 60%;
     }
 
     .phone-icon {
@@ -90,31 +107,40 @@
     }
 }
 .phone-btn {
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
     background-color: #e52c2c;
     border-radius: 50%;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     text-decoration: none;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .phone-btn:hover {
     background-color: #c42121;
+    transform: scale(1.05);
 }
 
 .custom-toggler {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 28px;
-    width: 40px;
+    height: 24px;
+    width: 36px;
     border: 1px solid #e52c2c;
     border-radius: 6px;
     background: transparent;
     padding: 4px 6px;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.custom-toggler:hover {
+    background-color: rgba(229, 44, 44, 0.1);
 }
 
 .toggler-bar {
@@ -122,4 +148,5 @@
     height: 2px;
     background-color: #e52c2c;
     border-radius: 1px;
+    transition: all 0.3s ease;
 }

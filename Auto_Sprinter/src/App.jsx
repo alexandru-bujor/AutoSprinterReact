@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
+
 import Footer from './components/footer/footer.jsx';
 import Navbar from './components/navbar/navbar.jsx';
 import RecentCars from './components/recent_cars/recent_cars.jsx';
@@ -10,6 +11,10 @@ import rawCarData from './detalii.json'; // New format
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import AboutUs from './components/about/about.jsx';
+import ContactForm from './components/contact/contactus.jsx';
+// In index.js or App.js
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const App = () => {
   const location = useLocation();
@@ -54,8 +59,15 @@ const App = () => {
           </Routes>
 
       </main>
-      <AboutUs />
+        <ContactForm selectedCar={
+            location.pathname.startsWith('/cars/')
+                ? carData.find(car => `/cars/${car.slug}` === location.pathname)
+                : null
+        } />
+
+        <AboutUs />
       <Footer />
+
     </div>
   );
 };

@@ -20,7 +20,7 @@
     color: #007bff;
     margin-bottom: 1rem;
   }
-  
+
   .about-us ul {
     list-style-type: none;
     padding-left: 0;
@@ -47,7 +47,7 @@
   
   .about-us .btn-outline-primary {
     border-color: #007bff;
-    color: #007bff;
+    color: #fff;
   }
   
   .about-us .btn-outline-primary:hover {
@@ -63,4 +63,5 @@
   .about-us .me-2 {
     margin-right: 0.5rem;
   }
-  
+
+

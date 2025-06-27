@@ -1,27 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import './contact.css'
 
 export default function ContactForm({ selectedCar }) {
-    const [referrer, setReferrer] = useState("");
+
     const [formData, setFormData] = useState({
         name: "",
         phone: "",
         message: "",
     });
 
-    useEffect(() => {
-        setReferrer(document.referrer || "Direct Access");
-    }, []);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     const sendToTelegram = async () => {
-        const botToken = ":"; // Replace with your bot token
-        const chatId = ""; // Replace with your chat ID
+        const botToken = "7879955769:AAF7mwYMDTxlmJQ7M4SXCT5r4QXQOEEPtxI"; // Replace with your bot token
+        const chatId = "849951670"; // Replace with your chat ID
 
         const { name, phone, message } = formData;
 
@@ -43,7 +40,7 @@ export default function ContactForm({ selectedCar }) {
 👤 Nume: ${name}  
 📱 Numar de telefon: ${phone}  
 💬 Messaj: ${message}  
-🔗 Link-ul: ${referrer}
+🔗 Link-ul: ${window.location.href}
 ${carDetails}
         `;
 
@@ -61,27 +58,16 @@ ${carDetails}
     const handleSubmit = async (e) => {
         e.preventDefault();
         await sendToTelegram();
-        toast.success("✅ Your request has been sent via Telegram!");
+        toast.success("✅ Mesajul a fost trimis!");
         setFormData({ name: "", phone: "", message: "" });
     };
 
     return (
 
         <div className="contact-form-container">
-            <h2 className="form-title">Book a Call Back 🚘</h2>
+            <h2 className="form-title">Lasă-ți contactele și va vom suna înapoi! </h2>
 
-            {selectedCar && (
-                <div className="car-details-card">
-                    <h3 className="car-details-title">Car Details</h3>
-                    <ul className="car-details-list">
-                        <li><strong>{selectedCar.title}</strong> ({selectedCar.year})</li>
-                        <li>💰 {selectedCar.price}</li>
-                        <li>⚙ {selectedCar.engine_capacity}</li>
-                        <li>🕹 {selectedCar.transmission}</li>
-                        <li>🔀 {selectedCar.drive_type}</li>
-                    </ul>
-                </div>
-            )}
+
 
             <form onSubmit={handleSubmit} className="contact-form">
                 <input
@@ -90,7 +76,7 @@ ${carDetails}
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    placeholder="Your Full Name"
+                    placeholder="Nume"
                     className="input-field"
                 />
                 <input
@@ -99,7 +85,7 @@ ${carDetails}
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    placeholder="Phone Number"
+                    placeholder="Numar de telefon"
                     className="input-field"
                 />
                 <textarea
@@ -107,14 +93,14 @@ ${carDetails}
                     value={formData.message}
                     onChange={handleChange}
                     rows="4"
-                    placeholder="Optional message"
+                    placeholder="Mesaj optional"
                     className="input-field textarea"
                 />
 
                 <button
                     type="submit"
                     className={`submit-btn `}>
-                    📩 Send Request
+                    📩 Trimite mesajul
                 </button>
             </form>
 

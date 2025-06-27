@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './CarDetail.css';
 import { Link } from 'react-router-dom'; // For linking to similar cars
 
@@ -124,7 +124,7 @@ const CarDetails = ({ car, cars }) => {
           </button>
 
           {/* Third Button: View car on 999.md */}
-          <button className="btn btn-outline-view back-btn" onClick={() => window.open(`https://999.md/${car.slug}`, '_blank')}>
+          <button className="btn btn-outline-view back-btn" onClick={() => window.open(`https://999.md/ro/${car.slug}`, '_blank')}>
             Vezi pe 999.md
           </button>
 

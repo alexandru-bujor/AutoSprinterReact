@@ -102,7 +102,7 @@ const AboutUs = () => {
                 href="https://maps.app.goo.gl/cf5dbbirZxRu3i1V8?g_st=com.google.maps.preview.copy"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-outline-primary"
+                className="btn btn-outline-primary btn_abt"
               >
                 Poziționare pe hartă
               </a>

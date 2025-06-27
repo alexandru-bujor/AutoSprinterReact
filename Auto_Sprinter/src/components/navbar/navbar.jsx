@@ -8,7 +8,6 @@ const Navbar = () => {
 
   const toggleNavbar = () => {
     setIsCollapsed(prev => !prev);
-    setDropdownOpen(false);
   };
 
   useEffect(() => {
@@ -21,48 +20,68 @@ const Navbar = () => {
   }, [isCollapsed]);
 
   return (
-      <nav className="navbar navbar-expand-lg navbar-light fixed-top bg-white shadow-sm custom-navbar">
-        <div className="container navbar-container">
-          <a href="/" className="logo navbar-brand">
-            <img className="navbar-img2" src="/img/logoN.png" alt="AutoSprinter Logo" />
-            <img className="navbar-img" src="/img/logoN.png" alt="AutoSprinter Logo" />
-          </a>
+    <nav className="navbar navbar-expand-lg navbar-light fixed-top bg-white shadow-sm custom-navbar" style={{ padding: '0.5rem 0' }}>
+      <div className="container navbar-container">
+        <a href="/" className="logo navbar-brand">
+          <img className="navbar-img2" style={{maxWidth: '60%'}} src="/img/logoN.png" alt="AutoSprinter Logo" />
+          <img className="navbar-img" src="/img/logoN.png" alt="AutoSprinter Logo" />
+        </a>
 
-          <a href="tel:+37369191783" className="phone-btn d-flex align-items-center justify-content-center">
-            <i className="bi bi-telephone-fill"></i>
-          </a>
+        <a href="tel:+37369191783" className="phone-btn d-flex align-items-center justify-content-center" title="Call us">
+          <i className="bi bi-telephone-fill"></i>
+        </a>
 
-          <button
-              className={`navbar-toggler ${!isCollapsed ? '' : 'collapsed'}`}
-              type="button"
-              aria-expanded={!isCollapsed}
-              aria-label="Toggle navigation"
-              onClick={toggleNavbar}
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
+        <button
+          className={`navbar-toggler ${!isCollapsed ? '' : 'collapsed'}`}
+          type="button"
+          aria-expanded={!isCollapsed}
+          aria-label="Toggle navigation"
+          onClick={toggleNavbar}
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-          <div
-              id="navbarCollapse"
-              ref={collapseRef}
-              className={`navbar-collapse collapse ${!isCollapsed ? 'show' : ''}`}
-              style={{
-                height: height,
-                transition: 'height 0.35s ease',
-                overflow: 'hidden',
-                width: '100%',
-                backgroundColor: 'white',
-                boxShadow: !isCollapsed ? '0 4px 10px rgba(0,0,0,0.1)' : 'none',
-              }}
-          >
-            <ul className="navbar-nav ms-auto d-flex align-items-center gap-4">
-              <li className="nav-item"><a className="nav-link py-4" href="/">Home</a></li>
-              <li className="nav-item"><a className="nav-link py-4" href="/catalog">Catalog</a></li>
-              <li className="nav-item"><a className="nav-link py-4" href="/about">Despre</a></li>
-            </ul>
-          </div>
+        <div
+          id="navbarCollapse"
+          ref={collapseRef}
+          className={`navbar-collapse collapse ${!isCollapsed ? 'show' : ''}`}
+          style={{
+            height: height,
+            transition: 'height 0.35s ease',
+            overflow: 'hidden',
+            width: '100%',
+            backgroundColor: 'white',
+          }}
+        >
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <a className="nav-link" href="/">
+                <i className="bi bi-house-door"></i>
+                <span>Home</span>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/cars">
+                <i className="bi bi-car-front"></i>
+                <span>Cars</span>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/about">
+                <i className="bi bi-info-circle"></i>
+                <span>About</span>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/contact">
+                <i className="bi bi-envelope"></i>
+                <span>Contact</span>
+              </a>
+            </li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
   );
 };
 

@@ -9,6 +9,7 @@
     backdrop-filter: blur(8px);
     margin-top: 2rem;
     transition: all 0.3s ease;
+    background-color: #ff4e43;
 }
 
 .form-title {
@@ -54,7 +55,7 @@
 }
 
 .input-field:focus {
-    border-color: #4F8EF7;
+    border-color: #e52c2c;
     outline: none;
     box-shadow: 0 0 5px rgba(79, 142, 247, 0.5);
 }
@@ -67,7 +68,7 @@
 .submit-btn {
     width: 100%;
     padding: 1.2rem;
-    background: linear-gradient(90deg, #4F8EF7, #3576E5);
+    background: linear-gradient(90deg, #96FF43, #96FF43);
     color: white;
     border: none;
     border-radius: 8px;
@@ -79,7 +80,8 @@
 }
 
 .submit-btn:hover {
-    background: linear-gradient(90deg, #3576E5, #4F8EF7);
+    background: linear-gradient(90deg, #96FF43, #96FF43);
+    filter: grayscale(50%);
 }
 
 .submit-btn:disabled {
@@ -88,6 +90,6 @@
 }
 
 .submit-btn.loading {
-    background-color: #3576E5;
+    background-color: #e52c2c;
     cursor: not-allowed;
 }

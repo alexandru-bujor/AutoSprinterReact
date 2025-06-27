@@ -1,0 +1,101 @@
+/* Footer base styles */
+.footer {
+    background-color: #1c1c1e;
+    color: #d1d1d1;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 15px;
+}
+
+.footer a {
+    color: #d1d1d1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #ffffff;
+}
+
+/* Layout and spacing */
+.footer .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 60px 20px 40px;
+}
+
+.footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* Columns */
+.footer .col-lg-3,
+.footer .col-lg-2,
+.footer .col-lg-4 {
+    flex: 1;
+    min-width: 220px;
+}
+
+/* Logo */
+.footer img.img {
+    width: 140px;
+    height: auto;
+    display: block;
+}
+
+/* Social Icons */
+.footer .social {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.footer .social a img {
+    width: 30px;
+    height: 30px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer .social a:hover img {
+    opacity: 1;
+}
+
+/* Links */
+.footer .ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer .ul li {
+    margin-bottom: 10px;
+}
+
+.footer .ul i {
+    color: #ffffff;
+    margin-right: 8px;
+}
+
+/* Map image */
+.footer img.location {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.footer img.location:hover {
+    transform: scale(1.03);
+}
+
+/* Bottom copyright */
+.footer_bottom {
+    background-color: #111;
+    text-align: center;
+    padding: 16px;
+    font-size: 14px;
+    color: #999;
+    border-top: 1px solid #2a2a2a;
+}

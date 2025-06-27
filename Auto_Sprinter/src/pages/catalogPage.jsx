@@ -6,11 +6,11 @@ import './CarDetail.css'
 const CatalogPage = ({ cars }) => {
     // Filter state variables
     const [filters, setFilters] = useState({
-        fuel: '',
+
         engineCapacity: '',
-        minPrice: 0,
-        maxPrice: 100000,
-        yearRange: [2000, 2025],
+        minPrice: 10000,
+        maxPrice: 70000,
+        yearRange: [2011, 2025],
     });
 
     // Handle filter change
@@ -21,17 +21,23 @@ const CatalogPage = ({ cars }) => {
             [name]: value,
         }));
     };
-
+    const resetFilters = () => {
+        setFilters({
+            engineCapacity: "",
+            minPrice: 10000,
+            maxPrice: 70000,
+            yearRange: [2011, 2025],
+        });
+    };
     // Filter cars based on selected filters
     const filteredCars = cars.filter((car) => {
-        const isFuelMatch = filters.fuel ? car.fuel === filters.fuel : true;
         const isEngineCapacityMatch =
             filters.engineCapacity ? car.engine_capacity === filters.engineCapacity : true;
         const isPriceMatch =
             car.price >= filters.minPrice && car.price <= filters.maxPrice;
         const isYearMatch = car.year >= filters.yearRange[0] && car.year <= filters.yearRange[1];
 
-        return isFuelMatch && isEngineCapacityMatch && isPriceMatch && isYearMatch;
+        return isEngineCapacityMatch && isPriceMatch && isYearMatch;
     });
 
     return (
@@ -46,21 +52,7 @@ const CatalogPage = ({ cars }) => {
                         <h3>Filter Cars</h3>
 
                         {/* Fuel Type Filter */}
-                        <div className="filter-item">
-                            <label>Fuel Type</label>
-                            <select
-                                name="fuel"
-                                value={filters.fuel}
-                                onChange={handleFilterChange}
-                                className="form-control"
-                            >
-                                <option value="">All</option>
-                                <option value="Gasoline">Gasoline</option>
-                                <option value="Diesel">Diesel</option>
-                                <option value="Electric">Electric</option>
-                                <option value="Hybrid">Hybrid</option>
-                            </select>
-                        </div>
+
 
                         {/* Engine Capacity Filter */}
                         <div className="filter-item">
@@ -72,10 +64,8 @@ const CatalogPage = ({ cars }) => {
                                 className="form-control"
                             >
                                 <option value="">All</option>
-                                <option value="1000">1000cc</option>
-                                <option value="1500">1500cc</option>
-                                <option value="2000">2000cc</option>
-                                <option value="2500">2500cc</option>
+                                <option value="2143 cm³">2143 cm³</option>
+                                <option value="2987 cm³">2987 cm³</option>
                             </select>
                         </div>
 
@@ -85,8 +75,8 @@ const CatalogPage = ({ cars }) => {
                             <input
                                 type="range"
                                 name="minPrice"
-                                min="0"
-                                max="100000"
+                                min="10000"
+                                max="70000"
                                 value={filters.minPrice}
                                 onChange={handleFilterChange}
                                 className="form-control"
@@ -94,8 +84,8 @@ const CatalogPage = ({ cars }) => {
                             <input
                                 type="range"
                                 name="maxPrice"
-                                min="0"
-                                max="100000"
+                                min="10000"
+                                max="70000"
                                 value={filters.maxPrice}
                                 onChange={handleFilterChange}
                                 className="form-control"
@@ -112,7 +102,7 @@ const CatalogPage = ({ cars }) => {
                             <input
                                 type="range"
                                 name="yearRange"
-                                min="2000"
+                                min="2011"
                                 max="2025"
                                 value={filters.yearRange[0]}
                                 onChange={(e) => setFilters({ ...filters, yearRange: [e.target.value, filters.yearRange[1]] })}
@@ -121,7 +111,7 @@ const CatalogPage = ({ cars }) => {
                             <input
                                 type="range"
                                 name="yearRange"
-                                min="2000"
+                                min="2011"
                                 max="2025"
                                 value={filters.yearRange[1]}
                                 onChange={(e) => setFilters({ ...filters, yearRange: [filters.yearRange[0], e.target.value] })}
@@ -130,6 +120,11 @@ const CatalogPage = ({ cars }) => {
                             <div>
                                 <span>Year Range: {filters.yearRange[0]} - {filters.yearRange[1]}</span>
                             </div>
+                        </div>
+
+                        {/* Reset Button */}
+                        <div className="filter-item">
+                            <button onClick={resetFilters} className="btn btn-secondary w-100 mt-3">Clear Filters</button>
                         </div>
                     </div>
                 </div>
